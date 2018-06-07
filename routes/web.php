@@ -49,4 +49,7 @@ Route::group(['prefix' => 'fruteria'], function()
 
 Route::post('recibir','FrutasController@formulario');
 
-//Route::resource('frutas','FrutasController');
+Route::get('borrar-nota/{id}','NotasController@destroy');
+
+Route::resource('notas','NotasController',
+                ['except' => ['destroy','update']]);
