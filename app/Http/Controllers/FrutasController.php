@@ -24,4 +24,10 @@ class FrutasController extends Controller
       // code...
       return 'accion de manzanas';
     }
+
+    public function formulario(Request $request)
+    {
+      // code...
+      return 'el nombre de la fruta es '.$request->input('nombre');
+    }
 }

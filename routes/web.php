@@ -47,4 +47,6 @@ Route::group(['prefix' => 'fruteria'], function()
   Route::get('manzanas','FrutasController@manzanas');
 });
 
+Route::post('recibir','FrutasController@formulario');
+
 //Route::resource('frutas','FrutasController');
