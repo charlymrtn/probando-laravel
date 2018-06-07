@@ -36,3 +36,15 @@ Route::get('contacto/{nombre?}/{edad?}', function($nombre='Carlos Martin',$edad 
 Route::post('hola-mundo', function(){
 	return 'hola mundo soy carlos martin por post';
 });
+
+
+Route::group(['prefix' => 'fruteria'], function()
+{
+  // code...
+  Route::get('frutas','FrutasController@index');
+  Route::get('naranjas/{admin?}',['middleware' => 'EsAdmin',
+                        'uses' => 'FrutasController@naranjas']);
+  Route::get('manzanas','FrutasController@manzanas');
+});
+
+//Route::resource('frutas','FrutasController');
