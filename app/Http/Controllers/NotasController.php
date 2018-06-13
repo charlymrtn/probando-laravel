@@ -47,11 +47,26 @@ class NotasController extends Controller
       return view('notas.saveNota');
     }
 
+    public function edit($id)
+    {
+      $nota = DB::table('notas')->where('id',$id)->first();
+
+      return view('notas.saveNota',compact('nota'));
+    }
+
     public function destroy($id)
     {
       // code...
       //return view('notas.saveNota');
         $nota =DB::table('notas')->where('id',$id)->delete();
         return redirect()->action('NotasController@index')->with('status','nota borrada correctamente');
+    }
+
+    public function update(Request $request, $id)
+    {
+      // code...
+      $update = DB::table('notas')->where('id',$id)->update(['titulo'=> $request->titulo,'descripcion' => $request->descripcion]);
+
+      return redirect()->action('NotasController@index')->with('status','nota editada correctamente');
     }
 }

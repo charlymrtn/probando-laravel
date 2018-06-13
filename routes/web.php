@@ -52,4 +52,4 @@ Route::post('recibir','FrutasController@formulario');
 Route::get('borrar-nota/{id}','NotasController@destroy');
 
 Route::resource('notas','NotasController',
-                ['except' => ['destroy','update']]);
+                ['except' => ['destroy']]);

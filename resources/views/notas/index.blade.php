@@ -13,6 +13,7 @@
         <li>{{$nota->titulo}}</li>
         <li><a href="{{url('notas/'.$nota->id)}}">ver</a></li>
         <li><a href="{{url('borrar-nota/'.$nota->id)}}">borrar</a></li>
+        <li><a href="{{url('notas/'.$nota->id.'/edit')}}">editar</a></li>
       </ul>
     </li>
   @endforeach
