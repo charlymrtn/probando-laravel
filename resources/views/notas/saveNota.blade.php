@@ -1,4 +1,8 @@
-<h1>Crear nota</h1>
+<h1>@isset($nota)
+  Actualizar nota
+@else
+  Crear nota
+@endisset </h1>
 
 <form method="POST" action="{{isset($nota) ? url('notas/'.$nota->id) : url('notas')}}" >
   @isset($nota)
